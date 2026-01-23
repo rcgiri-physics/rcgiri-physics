@@ -1,0 +1,2 @@
+# Plotting and visualization
+matplotlib==3.8.2
