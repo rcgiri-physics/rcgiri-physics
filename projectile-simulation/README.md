@@ -60,7 +60,8 @@ The most realistic model for macroscopic objects where $\vec{F}_{drag} = -cv\vec
 $\vec{F}_{drag} = -\frac{1}{2} C_d \rho A |\vec{v}| \vec{v}$
 
 - Differential Equations:
-$$\frac{dv_x}{dt} = -\frac{1}{m} \left( \frac{1}{2} C_d \rho A \sqrt{v_x^2 + v_y^2} \right) v_x$$$$\frac{dv_y}{dt} = -g - \frac{1}{m} \left( \frac{1}{2} C_d \rho A \sqrt{v_x^2 + v_y^2} \right) v_y$$
+$$\frac{dv_x}{dt} = -\frac{1}{m} \left( \frac{1}{2} C_d \rho A \sqrt{v_x^2 + v_y^2} \right) v_x$$
+$$\frac{dv_y}{dt} = -g - \frac{1}{m} \left( \frac{1}{2} C_d \rho A \sqrt{v_x^2 + v_y^2} \right) v_y$$
 
 - Solving Parameters:
 $\rho$: Density of air ($\approx 1.225 \, \text{kg/m}^3$ at sea level).
@@ -73,13 +74,14 @@ $A$: Cross-sectional area ($\pi r^2$).
 
 In classical mechanics, we describe motion using continuous differential equations:$$\frac{d\vec{v}}{dt} = \vec{a}$$
 
-To solve this in Python, we discretize time into small steps $\Delta t$. We approximate the change in velocity and position as:$$v_{n+1} = v_n + a_n \Delta t$$$$s_{n+1} = s_n + v_{n+1} \Delta t$$
+To solve this in Python, we discretize time into small steps $\Delta t$. We approximate the change in velocity and position as: $$v_{n+1} = v_n + a_n \Delta t$$
+$$s_{n+1} = s_n + v_{n+1} \Delta t$$
 
 Also, since the quadratic case has no closed-form analytical solution, we necessarily need to use numerical (version 1.0) methods to solve this problem.
 
 ## Validation
 
-To ensure the solver's accuracy, I compared the **Vacuum and Linear Drag** numerical output against the exact exponential analytical solution. The error was minimized to 10⁻⁶, confirming the code's reliability.
+To ensure the solver's accuracy, I compared the **Linear Drag** numerical output against the exact exponential analytical solution. The error was minimized to 10⁻⁶, confirming the code's reliability.
 
 ## 3. Results and Visualization
 
