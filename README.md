@@ -29,7 +29,7 @@ I am building a strong foundation in computation alongside physics.
 
 ## Portfolio Projects
 
-[Projectile Motion: From Vacuum to Quadratic Drag](https://github.com/rcgiri-physics/rcgiri-physics/tree/main/projectile-simulation)
+[Projectile Motion: From Vacuum to Quadratic Drag](https://github.com/rcgiri-physics/projectile-simulation)
 
 This project examines the transition from ideal motion to non-linear systems using numerical integration.
 
