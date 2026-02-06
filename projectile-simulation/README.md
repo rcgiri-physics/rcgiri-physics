@@ -2,11 +2,17 @@
 
 A computational physics study comparing analytical and numerical solution for motion in a fluid.
 
+## Abstract
+
+This project investigates the numerical simulation of projectile motion in dissipative media. We transition from the idealized vacuum model to non-linear drag regimes, implementing a 4th-order Runge-Kutta (RK4) integration scheme. By utilizing vectorized state-space representations in Python (NumPy), we demonstrate significant improvements in numerical stability and global truncation error ($O(\Delta t^4)$) compared to first-order Euler methods. This repository serves as a foundational framework for modeling complex classical systems where analytical solutions are non-existent.
+
 ## Introduction
 
 This project simulates the trajectory of a projectile under three different physical models. It demonstrates the transition from simple classroom physics to realistic, non-linear systems that require numerical integration.
 
-**Note:** *Version 1.0* implements a manual time-stepping algorithm (Euler Method) using standard Python data structures (lists) to avoid dependency on heavy numerical libraries. it is worth noting that the Euler method is a "first-order" numerical method. This means its global error is roughly proportional to the time step $\Delta t$. It is only accurate for very small time steps, so, later version we will move to *SciPy* and *RK4*.
+**Note:** *Version 2.0 Update:* This project has been upgraded to a research-standard 4th-order Runge-Kutta (RK4) integrator. By sampling the derivatives at four different points per time-step, the global error has been reduced from $O(\Delta t)$ to $O(\Delta t^4)$, allowing for high-precision trajectories even with larger time steps.
+
+*Version 1.0* implements a manual time-stepping algorithm (Euler Method) using standard Python data structures (lists) to avoid dependency on heavy numerical libraries. it is worth noting that the Euler method is a "first-order" numerical method. This means its global error is roughly proportional to the time step $\Delta t$. It is only accurate for very small time steps, so, later version we will move to *SciPy* and *RK4*.
 
 ## 1. Physical models
 
@@ -72,12 +78,32 @@ $A$: Cross-sectional area ($\pi r^2$).
 
 ## 2. Numerical Implementation
 
+Baseline: Euler Method (v1.0)
+
 In classical mechanics, we describe motion using continuous differential equations:$$\frac{d\vec{v}}{dt} = \vec{a}$$
 
 To solve this in Python, we discretize time into small steps $\Delta t$. We approximate the change in velocity and position as: $$v_{n+1} = v_n + a_n \Delta t$$
 $$s_{n+1} = s_n + v_{n+1} \Delta t$$
 
 Also, since the quadratic case has no closed-form analytical solution, we necessarily need to use numerical (version 1.0) methods to solve this problem.
+
+In **Version 2.0**, the simulation utilizes State-Vector notation. Instead of updating $x$ and $y$ as separate variables, we define a state vector $\mathbf{s}$:
+
+$$\mathbf{s} = [x, y, v_x, v_y]$$
+
+The time evolution is governed by the 4th-order Runge-Kutta algorithm:
+
+$$\mathbf{k_1} = \mathbf{f}(t_n, \mathbf{s}_n)$$
+
+$$\mathbf{k_2} = \mathbf{f}(t_n + \frac{\Delta t}{2}, \mathbf{s}_n + \frac{\Delta t}{2}\mathbf{k_1})$$
+
+$$\mathbf{k_3} = \mathbf{f}(t_n + \frac{\Delta t}{2}, \mathbf{s}_n + \frac{\Delta t}{2}\mathbf{k_2})$$
+
+$$\mathbf{k_4} = \mathbf{f}(t_n + \Delta t, \mathbf{s}_n + \Delta t\mathbf{k_3})$$
+
+$$\mathbf{s}_{n+1} = \mathbf{s}_n + \frac{\Delta t}{6}(\mathbf{k_1} + 2\mathbf{k_2} + 2\mathbf{k_3} + \mathbf{k_4})$$
+
+By implementing this using NumPy, we achieve higher computational efficiency through vectorized operations, mirroring the mathematical notation used in classical mechanics research.
 
 ## Validation
 
@@ -95,22 +121,54 @@ We validated the Euler solver against the exact analytical solution for Linear D
 - Physical Models Comparison
 
 Comparing the three drag models shows that quadratic drag (realistic air resistance) significantly reduces range compared to the vacuum ideal.
-![Comparison Plot](plots/2_model_comparison.png)
+Version 1: ![Comparison Plot](plots/2_model_comparison.png)
+
+Version 2: ![Comparison Plot](plots/v2_models.png)
 
 - Effect of Mass
 
 Unlike in a vacuum, mass matters in air. Heavier objects (blue/green) maintain momentum better and travel further than lighter objects (red/orange) which are easily slowed by air resistance.
 ![Mass Plot](plots/3_mass_variation.png)
 
+- Numerical Stability Test
+
+The stability check demonstrates that while the Euler method (first-order) begins to drift at $dt=0.1s$, the RK4 method maintains the physical integrity of the trajectory.
+![Stability Check](plots/v2_stability_check.png)
+Fig 4: A comparison of the Euler vs. RK4 method at a coarse time-step ($dt=0.1$). Note how the Euler method (dashed) over-calculates the trajectory, while the RK4 method maintains the physical energy of the system.
+
+## Mathematical Appendix: Numerical Error Scaling
+
+In this version, I transitioned from the Euler Method to the 4th-order Runge-Kutta (RK4) method. The primary motivation is the reduction of the Local Truncation Error (LTE).
+
+1. The Euler Method (First-Order)The Euler method is a first-order Taylor expansion. It assumes the slope is constant over the entire interval $\Delta t$:$$y_{n+1} = y_n + f(t_n, y_n)\Delta t + O(\Delta t^2)$$
+
+The Local Truncation Error is $O(\Delta t^2)$, which means if you halve the time-step, the error per step decreases by 4, but the number of steps doubles. Therefore, the Global Error is only $O(\Delta t)$.2. The Runge-Kutta Method (Fourth-Order)RK4 samples the derivative (acceleration) at four different points within each time-step to cancel out lower-order error terms:
+
+$$k_1 = f(t_n, y_n)$$
+
+$$k_2 = f(t_n + \frac{\Delta t}{2}, y_n + \frac{\Delta t}{2}k_1)$$
+
+$$k_3 = f(t_n + \frac{\Delta t}{2}, y_n + \frac{\Delta t}{2}k_2)$$$$k_4 = f(t_n + \Delta t, y_n + \Delta t k_3)$$
+
+$$y_{n+1} = y_n + \frac{\Delta t}{6}(k_1 + 2k_2 + 2k_3 + k_4)$$
+
+The Local Truncation Error for RK4 is $O(\Delta t^5)$, and the Global Error is $O(\Delta t^4)$.
+
+*Comparison:* If we reduce the time-step by a factor of 10:
+
+Euler's error decreases by 10 times.
+
+RK4's error decreases by 10,000 times.
+
 ## 4. How to Run
 
 1. Ensure you have Python installed.
-2. Install dependencies: `pip install matplotlib`
-3. Run the script: `python projectile_sim_v1.py`
+2. Install dependencies: `pip install matplotlib numpy`
+3. Run the script: `python projectile_sim_v2.py`
 
 ## 5. Future Enhancements
 
-1. Update Euler's method to Runge-Kutta 4th Order (RK4) or Python libraries that solve ODEs like `scipy.integrate.solve_ivp` {Version 2.0}
+1. Using Python libraries that solve ODEs like `scipy.integrate.solve_ivp` and validate {Version 2.1}
 2. Incorporate the Magnus Effect (spin on the ball)
 3. Add a Variable Density Atmosphere model for high-altitude projectiles
 4. Implement a GUI using TKinter or PyQt for real-time parameter adjustment
