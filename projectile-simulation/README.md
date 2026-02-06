@@ -4,7 +4,7 @@ A computational physics study comparing analytical and numerical solution for mo
 
 ## Abstract
 
-This project investigates the numerical simulation of projectile motion in dissipative media. We transition from the idealized vacuum model to non-linear drag regimes, implementing a 4th-order Runge-Kutta (RK4) integration scheme. By utilizing vectorized state-space representations in Python (NumPy), we demonstrate significant improvements in numerical stability and global truncation error ($O(\Delta t^4)$) compared to first-order Euler methods. This repository serves as a foundational framework for modeling complex classical systems where analytical solutions are non-existent.
+This project investigates the numerical simulation of projectile motion in dissipative media. We transition from the idealized vacuum model to non-linear drag regimes, implementing a 4th-order Runge-Kutta (RK4) integration scheme. By utilizing vectorized state-space representations in Python (NumPy), we demonstrate significant improvements in numerical stability and global truncation error ( $O(\Delta t^4)$ ) compared to first-order Euler methods. This repository serves as a foundational framework for modeling complex classical systems where analytical solutions are non-existent.
 
 ## Introduction
 
@@ -80,7 +80,7 @@ $A$: Cross-sectional area ($\pi r^2$).
 
 Baseline: Euler Method (v1.0)
 
-In classical mechanics, we describe motion using continuous differential equations:$$\frac{d\vec{v}}{dt} = \vec{a}$$
+In classical mechanics, we describe motion using continuous differential equations: $$\frac{d\vec{v}}{dt} = \vec{a}$$
 
 To solve this in Python, we discretize time into small steps $\Delta t$. We approximate the change in velocity and position as: $$v_{n+1} = v_n + a_n \Delta t$$
 $$s_{n+1} = s_n + v_{n+1} \Delta t$$
