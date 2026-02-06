@@ -1,5 +1,0 @@
-# Plotting and visualization
-matplotlib==3.8.2
-
-# Numerical computations
-numpy==2.3.0    
