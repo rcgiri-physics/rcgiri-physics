@@ -30,14 +30,15 @@ I am building a strong foundation in computation alongside physics.
 ## Portfolio Projects
 
 [Projectile Motion: From Vacuum to Quadratic Drag](https://github.com/rcgiri-physics/projectile-simulation)
+A research-validated study on dissipative systems using high-order numerical integration.
 
-This project examines the transition from ideal motion to non-linear systems using numerical integration.
+Version 2.1 Milestone: Implemented a Numerical Audit & Residual Analysis framework.
 
-Version 2.0 Achievement: Implemented a 4th-order Runge-Kutta (RK4) engine.
+Validation: Cross-verified the custom engine against the industry-standard scipy.integrate.solve_ivp (RK45) benchmark.
 
-Architecture: Shifted to a vectorized state-space representation using NumPy, reducing global error scaling to $O(\Delta t^4)$.
+Precision: Achieved 99.98% accuracy with a maximum vertical deviation of $\approx 5.31 \times 10^{-3}$ meters over non-linear trajectories.
 
-Validation: Conducted stability checks comparing Euler drift against RK4 precision at large time-steps.
+Architecture: Utilized a vectorized state-space representation in NumPy, optimizing for $O(\Delta t^4)$ global error scaling.
 
 ---
 
@@ -46,7 +47,7 @@ Validation: Conducted stability checks comparing Euler drift against RK4 precisi
 | Month | Project Focus | Status |
 | :--- | :--- | :--- |
 | **Jan** | Projectile v1.0 (Euler/Pure Python) | **Completed** |
-| **Feb** | Projectile v2.0 (RK4/NumPy Vectorization) | **Completed** |
+| **Feb** | Projectile v2.1: RK4 Engine, Vectorization, & SciPy Validation | **Completed** |
 
 ---
 
