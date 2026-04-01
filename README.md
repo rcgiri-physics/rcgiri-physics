@@ -48,6 +48,7 @@ Architecture: Utilized a vectorized state-space representation in NumPy, optimiz
 | :--- | :--- | :--- |
 | **Jan** | Projectile v1.0 (Euler/Pure Python) | **Completed** |
 | **Feb** | Projectile v2.1: RK4 Engine, Vectorization, & SciPy Validation | **Completed** |
+| **Apr** | LCR_Modernization: Vectorization, Benchmarking & Phase Space mapping | **In Progress** |
 
 ---
 
