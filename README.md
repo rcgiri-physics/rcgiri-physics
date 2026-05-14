@@ -7,26 +7,33 @@ Nepal
 
 ## About
 
-I am a physics graduate currently teaching at college level and systematically preparing for PhD applications in **Computational Physics**.
+I am an MSc Physics graduate and educator specializing in the **numerical modeling of complex physical systems**. My work focuses on bridging the gap between theoretical frameworks and high-performance computation, with a specific emphasis on the long-term stability of Hamiltonian and Lagrangian systems.
 
-This GitHub documents my learning and projects in:
-- Numerical methods for physics
-- Computational modeling and simulation
-- Scientific Python
+This portfolio documents my research and implementations in:
+- **Classical & Nonlinear Dynamics:** Symplectic integrators, chaos theory (3-Body problem), and strange attractors.
+- **Computational Methods:** High-order ODE solvers (RK4/Verlet), vectorized state-space modeling, and numerical linear algebra.
+- **Performance Engineering:** Scientific Python benchmarking and legacy code modernization (Fortran-to-Python migration).
 
-I am building a strong foundation in computation alongside physics.
+I am systematically building a rigorous foundation for a PhD in **Computational Physics**.
 
 ---
 
 ## Current Focus
 
-- **Hamiltonian & Symplectic Dynamics:** Implementing energy-conserving integrators for long-term orbital stability.
-- **Chaos & Nonlinear Dynamics:** Quantifying sensitivity to initial conditions through Lyapunov divergence and bifurcation mapping.
-- **Scientific Python:** Vectorized state-space modeling and performance benchmarking of numerical engines.
+- **Atmospheric Chaos:** Implementing the Lorenz system to study the topology of strange attractors and the "Butterfly Effect."
+- **Bifurcation Theory:** Identifying period-doubling routes to chaos and quantifying sensitivity to initial conditions.
+- **Matrix Mechanics (Coming June):** Transitioning to computational linear algebra, eigenvalue problems, and normal mode analysis.
+- **Symplectic Integration:** Developing energy-conserving numerical engines for N-body and oscillating systems.
 
 ---
 
 ## Portfolio Projects
+
+### [Lagrangian Mechanics: The Double Pendulum](https://github.com/rcgiri-physics/double-pendulum-simulation)
+A deep dive into multi-degree-of-freedom systems and the onset of chaos through Lagrangian mechanics.
+
+- **Euler-Lagrange Derivation:** Formulated the non-linear equations of motion for a coupled pendulum system using generalized coordinates.
+- **Phase Space Mapping:** Visualized the transition from periodic motion to chaotic flipping using state-space trajectories.
 
 ### [3-Body Laboratory: Symplectic Physics Engine](https://github.com/rcgiri-physics/three-body-simulation)
 A high-precision study of gravitational stability, transition to chaos, and long-term orbital conservation.
@@ -59,8 +66,10 @@ A research-validated study on dissipative systems using high-order numerical int
 | **Feb** | Projectile v2.1: RK4 Engine, Vectorization, & SciPy Validation | **Completed** |
 | **Apr** | LCR_Modernization: Vectorization, Benchmarking & Phase Space mapping | **Completed** |
 | **Apr** | Chaotic 3-Body Dynamics: Symplectic Systems & Ejection Thresholds | **Completed**|
-| **May/June**| **Lagrangian Mechanics: Double Pendulum & Bifurcation Analysis** | **Next Up**|
+| **May**| **Lagrangian Mechanics: Double Pendulum** | **Completed**|
+| **May** | **Lorenz Attractor: Strange Attractors & Chaos Mapping** | **In Progress** |
+| **June** | **Computational Linear Algebra: Matrix Mechanics & Normal Modes** | **Next Up** |
 
 ---
 
-> This profile is updated progressively as my research and computational framework develop.
+> "Physics is the only profession in which prophecy is not only allowed but required." — This profile tracks my progress in mastering those prophecies through code.
