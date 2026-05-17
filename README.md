@@ -49,11 +49,15 @@ A structural migration of a 2023 procedural Fortran 90 dissertation into a high-
 * **Legacy Cross-Validation:** Achieved 100% trace overlap between modern Python outputs and legacy Fortran data.
 * **Performance Auditing:** Benchmarked Python interpreter loops versus compiled Fortran for 1,000,000-step execution cycles.
 
-### [Projectile Motion: From Vacuum to Quadratic Drag](https://github.com/rcgiri-physics/projectile-simulation)
-A research-validated study on dissipative systems using high-order numerical integration.
+### [Projectile Simulation](https://github.com/rcgiri-physics/projectile-simulation)
+An investigation of ballistics kinematics evaluating the transit from idealized vacuum baselines to dissipative media.
 
-* **Precision:** Achieved 99.98% accuracy with a maximum vertical deviation of $\approx 5.31 \times 10^{-3}$ meters over non-linear trajectories.
-* **Architecture:** Utilized a vectorized state-space representation in NumPy, optimizing for $O(\Delta t^4)$ global error scaling.
+$$
+m \frac{d\mathbf{v}}{dt} = m \mathbf{g} - b\mathbf{v} - c|\mathbf{v}|\mathbf{v}
+$$
+
+*   **State-Space Vectorization:** Implements array-based evaluations in NumPy to resolve non-linear quadratic drag terms where exact analytical solutions are unavailable.
+*   **Error Benchmarking:** Compares custom discrete step allocations against adaptive-step algorithms to map absolute spatial residuals.
 
 ---
 
