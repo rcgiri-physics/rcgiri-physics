@@ -1,6 +1,6 @@
 # Ram Chandra Giri
 
-MSc Physics | Computational Physics (PhD aspirant)  
+MSc Physics | Computational Physics (PhD aspirant)
 Nepal
 
 ---
@@ -28,6 +28,18 @@ I am systematically building a rigorous foundation for a PhD in **Computational 
 ---
 
 ## Portfolio Projects
+
+### [Lorenz Attractor Simulation: Strange Attractors & Deterministic Chaos](https://github.com/rcgiri-physics/lorenz-attractor-simulation)
+A computational framework designed to model, visualize, and analyze deterministic chaos within the three-dimensional, non-linear atmospheric flow model derived by Edward Lorenz.
+
+$$
+\frac{dx}{dt} = \sigma(y - x), \quad \frac{dy}{dt} = x(\rho - z) - y, \quad \frac{dz}{dt} = xy - \beta z
+$$
+
+* **Numerical Engine:** Implemented a standard fourth-order Runge-Kutta (RK4) integrator with adaptive time-stepping to preserve trajectory integrity across high-gradient vector fields.
+* **Bifurcation Analysis:** Mapped phase-space trajectories across a spectrum of Rayleigh numbers ($\rho$). Safely isolated the subcritical Hopf bifurcation ($\rho \approx 24.74$) where steady-state fixed points lose stability, giving rise to the iconic "butterfly" strange attractor.
+* **Chaos Quantification:** Evaluated sensitive dependence on initial conditions (SDIC) by tracking twin trajectories with an initial perturbation of $\delta \sim 10^{-8}$, calculating the maximal Lyapunov exponent ($\lambda_{max} > 0$) to verify true deterministic chaos rather than numerical noise.
+* **Topology Mapping:** Visualized 3D phase-space projections, plotting the dual-wing geometry to study trajectory ergodicity and fractal structure bounds.
 
 ### [Lagrangian Mechanics: The Double Pendulum](https://github.com/rcgiri-physics/double-pendulum-simulation)
 A deep dive into multi-degree-of-freedom systems and the onset of chaos through Lagrangian mechanics.
@@ -60,15 +72,15 @@ A research-validated study on dissipative systems using high-order numerical int
 
 ## 2026 Research Roadmap
 
-| Month | Project Focus | Status |
+| **Month** | **Project Focus** | **Technical Milestones / Status** |
 | :--- | :--- | :--- |
-| **Jan** | Projectile v1.0 (Euler/Pure Python) | **Completed** |
-| **Feb** | Projectile v2.1: RK4 Engine, Vectorization, & SciPy Validation | **Completed** |
-| **Apr** | LCR_Modernization: Vectorization, Benchmarking & Phase Space mapping | **Completed** |
-| **Apr** | Chaotic 3-Body Dynamics: Symplectic Systems & Ejection Thresholds | **Completed**|
-| **May**| **Lagrangian Mechanics: Double Pendulum** | **Completed**|
-| **May** | **Lorenz Attractor: Strange Attractors & Chaos Mapping** | **In Progress** |
-| **June** | **Computational Linear Algebra: Matrix Mechanics & Normal Modes** | **Next Up** |
+| **Jan** | Projectile v1.0 | **Completed** • Kinematics, Euler integration, pure Python baseline. |
+| **Feb** | Projectile v2.1 | **Completed** • RK4 Engine development, NumPy vectorization, SciPy validation. |
+| **Apr** | LCR_Modernization | **Completed** • Fortran-to-Python pipeline, profiling, state-space phase mapping. |
+| **Apr** | Chaotic 3-Body Dynamics | **Completed** • Symplectic Velocity-Verlet, Hamiltonian conservation tracking, ejection thresholds. |
+| **May** | Lagrangian Mechanics | **Completed** • Double Pendulum derivation, generalized coordinates, Poincaré sections. |
+| **May** | Lorenz Attractor | **Completed** • Bifurcation mapping, Chaos quantification ($\lambda_{max}$), 3D phase topology. |
+| **June** | **Computational Linear Algebra** | **Next Up** • Matrix Mechanics, Eigenvalue problems, Lanczos algorithm, and Normal Mode analysis. |
 
 ---
 
