@@ -37,6 +37,8 @@ I model non-linear and chaotic systems with my own integrators, and I check ever
 | [Driven LCR Circuit](https://github.com/rcgiri-physics/LCR-Circuit-Modernization) | 2023 Fortran 90 dissertation rebuilt in vectorised Python | Residual vs SciPy < 10⁻⁷; matches legacy Fortran output |
 | [Projectile Simulation](https://github.com/rcgiri-physics/projectile-simulation) | Vacuum to linear + quadratic drag; fixed vs adaptive steps | Spatial residual maps |
 
+All five are checked by physverify (order of accuracy, conservation) in GitHub Actions on every push.
+
 ## 2026 log
 
 | Month | Work | Status |
