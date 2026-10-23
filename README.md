@@ -11,9 +11,8 @@ I model non-linear and chaotic systems with my own integrators, and I check ever
 | :--- | :--- |
 | Physics projects | 5 completed (MSc dissertation: driven LCR circuits, Fortran 90, 2023) |
 | Research software | [physverify](https://github.com/rcgiri-physics/physverify) v0.4.2 (PyPI, DOI) |
-| Applied work | [MCQplex](https://mcqplex.com) (live) |
 | Next | Computational linear algebra, from Nov 2026 |
-| Hardware | Acer Aspire E5-574G laptop: Intel Core i7-6500U (2 cores, 4 threads), 8 GB RAM; all code runs on the CPU |
+| Hardware | 8 GB laptop, CPU-only |
 
 ---
 
@@ -70,7 +69,3 @@ For Lorenz and the double pendulum, CI checks the equations of motion with physv
 - **Routine & Substitution Planner**: offline-first school timetable with a tiered teacher-substitution engine.
 - **Open curricula** (v0.1, not yet piloted in a classroom): [git-for-schools](https://rcgiri-physics.github.io/git-for-schools/) (offline-first Git, Grades 8–12) · [data-science-nepal](https://rcgiri-physics.github.io/data-science-nepal/) (bilingual, Nepali datasets).
 - **Utilities**: [llm-free-cascade](https://github.com/rcgiri-physics/llm-free-cascade) (free-tier LLM fallback) · [pdf-render-pool](https://github.com/rcgiri-physics/pdf-render-pool) (Puppeteer HTML→PDF pool) · [mongo-job-lock](https://github.com/rcgiri-physics/mongo-job-lock) (run a clustered cron job once).
-
----
-
-> "Physics is the only profession in which prophecy is not only allowed but required."
