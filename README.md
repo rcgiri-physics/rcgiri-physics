@@ -1,7 +1,7 @@
 # Ram Chandra Giri
 
 **MSc Physics · Physics educator · Preparing for a PhD in Computational Physics & Nonlinear Dynamics** · Nepal
-[Website](https://rcgiri-physics.github.io/) · [ORCID 0009-0008-7149-7938](https://orcid.org/0009-0008-7149-7938)
+[Website](https://rcgiri-physics.github.io/) · [rcgiri.physics@gmail.com](mailto:rcgiri.physics@gmail.com) · [ORCID 0009-0008-7149-7938](https://orcid.org/0009-0008-7149-7938)
 
 I model non-linear and chaotic systems with my own integrators, and I check every result against a conservation law or an independent reference. Each repository is written up like a lab entry: the system, the method, and the check used to trust it.
 
