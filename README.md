@@ -13,7 +13,7 @@ I model non-linear and chaotic systems with my own integrators, and I check ever
 | Research software | [physverify](https://github.com/rcgiri-physics/physverify) v0.4.2 (PyPI, DOI) |
 | Applied work | [MCQplex](https://mcqplex.com) (live) |
 | Next | Computational linear algebra, from Nov 2026 |
-| Hardware | 16 GB RAM, CPU-only, by design |
+| Hardware | Acer Aspire E5-574G laptop: Intel Core i7-6500U (2 cores, 4 threads), 8 GB RAM; all code runs on the CPU |
 
 ---
 
