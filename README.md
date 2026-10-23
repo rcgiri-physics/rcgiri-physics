@@ -1,7 +1,7 @@
 # Ram Chandra Giri
 
 **MSc Physics · Physics educator · Preparing for a PhD in Computational Physics & Nonlinear Dynamics** · Nepal
-[ORCID 0009-0008-7149-7938](https://orcid.org/0009-0008-7149-7938)
+[Website](https://rcgiri-physics.github.io/) · [ORCID 0009-0008-7149-7938](https://orcid.org/0009-0008-7149-7938)
 
 I model non-linear and chaotic systems with my own integrators, and I check every result against a conservation law or an independent reference. Each repository is written up like a lab entry: the system, the method, and the check used to trust it.
 
@@ -37,7 +37,19 @@ I model non-linear and chaotic systems with my own integrators, and I check ever
 | [Driven LCR Circuit](https://github.com/rcgiri-physics/LCR-Circuit-Modernization) | 2023 Fortran 90 dissertation rebuilt in vectorised Python | Residual vs SciPy < 10⁻⁷; matches legacy Fortran output |
 | [Projectile Simulation](https://github.com/rcgiri-physics/projectile-simulation) | Vacuum to linear + quadratic drag; fixed vs adaptive steps | Spatial residual maps |
 
-All five are checked by physverify (order of accuracy, conservation) in GitHub Actions on every push.
+### physverify in CI on my own projects
+
+Every push to these five repos runs physverify in GitHub Actions. Latest results on `main`: **40 of 40 checks pass.**
+
+| Project | What CI checks | Result |
+| :--- | :--- | :--- |
+| 3-Body | Velocity-Verlet order; momentum, angular momentum, time reversal; README energy claim | Order 2.00; conserved to ~10⁻¹⁵; \|ΔE/E₀\| = 6.4×10⁻⁹ · 9/9 |
+| Lorenz | Equations at RK4 order; phase-space contraction −(σ+1+β); Jacobian; Lyapunov sum = trace | Order 3.97–4.28; all match · 8/8 |
+| Double Pendulum | Equations at RK4 order; README energy-drift benchmark | Order 3.78–4.73; drift 7.8×10⁻¹² over 30 s · 7/7 |
+| Projectile | Euler and RK4 vs exact solutions (vacuum, linear drag) and quadratic drag | Euler 1.00, RK4 3.97–4.04 · 9/9 |
+| LCR Circuit | RK4 vs exact solution at R = 10, 40, 100 Ω; README SciPy claim | Order 4.00–4.25; 9.9×10⁻⁸ vs exact · 7/7 |
+
+For Lorenz and the double pendulum, CI checks the equations of motion with physverify's own RK4; their adaptive solvers are not order-checked (the double pendulum's is checked through its energy benchmark).
 
 ## 2026 log
 
