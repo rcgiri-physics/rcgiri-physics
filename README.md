@@ -10,7 +10,7 @@ I model non-linear and chaotic systems with my own integrators, and I check ever
 | Status · Oct 2026 | |
 | :--- | :--- |
 | Physics projects | 5 completed (MSc dissertation: driven LCR circuits, Fortran 90, 2023) |
-| Research software | [physverify](https://github.com/rcgiri-physics/physverify) v0.4.2 (PyPI, DOI) |
+| Research software | [physverify](https://github.com/rcgiri-physics/physverify) v0.6.0 (PyPI, DOI) |
 | Next | Computational linear algebra, from Nov 2026 |
 | Hardware | 8 GB laptop, CPU-only |
 
@@ -58,7 +58,7 @@ For Lorenz and the double pendulum, CI checks the equations of motion with physv
 | Apr | LCR modernisation; chaotic 3-body dynamics | Done |
 | May | Double pendulum; Lorenz attractor | Done |
 | Jun–Sep | [MCQplex](https://mcqplex.com) (NEB exam prep), school routine planner, [llm-free-cascade](https://github.com/rcgiri-physics/llm-free-cascade), [pdf-render-pool](https://github.com/rcgiri-physics/pdf-render-pool), [mongo-job-lock](https://github.com/rcgiri-physics/mongo-job-lock) | Live / released |
-| Oct | [physverify](https://github.com/rcgiri-physics/physverify) 0.1 → 0.4.2: verification tool for simulations | Released |
+| Oct | [physverify](https://github.com/rcgiri-physics/physverify) 0.1 → 0.6.0: verification tool for simulations | Released |
 | **Nov →** | **Computational linear algebra:** eigenvalue problems, Lanczos, normal modes | **Next** |
 
 **Toward PhD-level work:** compiled acceleration (Numba, C++) → PDEs and lattice systems → multi-core parameter sweeps.
